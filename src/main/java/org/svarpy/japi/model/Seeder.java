@@ -2,12 +2,12 @@ package org.svarpy.japi.model;
 
 public class Seeder {
 	
-	int id;
+	String id;
 	String name;
 	String team;
 	int projects;
 	
-	public Seeder(int id, String name, String team, int projects) {
+	public Seeder(String id, String name, String team, int projects) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -21,11 +21,11 @@ public class Seeder {
 	}
 	
 /* Getters and Setters */
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
