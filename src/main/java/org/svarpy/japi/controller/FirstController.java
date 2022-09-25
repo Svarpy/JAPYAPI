@@ -46,7 +46,7 @@ public class FirstController {
 		return firstService.updateSeeder(seeder);
 	}
 	
-	@DeleteMapping("/delete{id}")
+	@DeleteMapping("/delete/{id}")
 	public String deleteSeeder(@PathVariable String id) {
 		return firstService.deleteSeeder(id);
 	}

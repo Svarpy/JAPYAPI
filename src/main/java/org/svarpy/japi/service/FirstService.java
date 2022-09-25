@@ -40,8 +40,8 @@ public class FirstService {
 	// Method to add new seeder
 	public String addNewSeeder(Seeder seeder) {
 		try {
-			nonSeederId = localDataMap.get(seeder.getId()).getId();
-			if(nonSeederId.equalsIgnoreCase(seeder.getId())) {
+			nonSeederId = localDataMap.getOrDefault(seeder.getId(), new Seeder()).getId();
+			if(nonSeederId != null) {
 				responseMessage = "Seeder already joined, please update to make changes";
 			}
 			else {
@@ -58,8 +58,8 @@ public class FirstService {
 	// Method to update seeder
 	public String updateSeeder(Seeder seeder) {
 		try {
-			nonSeederId = localDataMap.get(seeder.getId()).getId();
-			if(nonSeederId.equalsIgnoreCase(seeder.getId())) {
+			nonSeederId = localDataMap.getOrDefault(seeder.getId(), new Seeder()).getId();
+			if(nonSeederId != null) {
 				localDataMap.replace(nonSeederId, seeder);
 				responseMessage = "Seeder updated successfully.";
 			}
@@ -74,8 +74,8 @@ public class FirstService {
 	// Method to delete seeder
 	public String deleteSeeder(String id) {
 		try {
-			nonSeederId = localDataMap.get(id).getId();
-			if(nonSeederId.equalsIgnoreCase(id)) {
+			nonSeederId = localDataMap.getOrDefault(id, new Seeder()).getId();
+			if(nonSeederId != null) {
 				localDataMap.remove(id);
 				responseMessage = "Seeder data deleted successfully.";
 			}
